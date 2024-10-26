@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма для бібліотеки</title>
+    <link rel="stylesheet" href="../css/form.css">
+    <script>
+        // Функція для виведення часу звернення до сторінки
+        function runTask() {
+            const currentTime = new Date().toLocaleString();
+            const textarea = document.getElementById('comments');
+    
+            console.log("Час звернення до сторінки: " + currentTime);
+            textarea.value = "Час звернення до сторінки: " + currentTime;
+            alert("Час звернення до сторінки: " + currentTime);
+        }
+
+        // Функція для пошуку інформації у введеному тексті
+        function searchInfo() {
+            const inputText = document.getElementById('inputText').value;
+            let result = "";
+
+            // 5.1 Кількість слів (включає всі літери, зокрема українські)
+            const wordCount = (inputText.match(/\b\p{L}+\b/gu) || []).length;
+            result += "Кількість слів: " + wordCount + "\n";
+
+            // 5.2 Слова, які починаються з 'а' та закінчуються на 'а'
+            const specificWords = inputText.match(/\bа\w*а\b/gi) || [];
+            result += "Слова, які починаються з 'а' і закінчуються на 'а': " + specificWords.join(", ") + "\n";
+
+            // 5.3 Цифри
+            const digits = inputText.match(/\d/g) || [];
+            result += "Цифри: " + digits.join(", ") + "\n";
+
+            // 5.4 Цілі числа
+            const integers = inputText.match(/\b\d+\b/g) || [];
+            result += "Цілі числа: " + integers.join(", ") + "\n";
+
+            // Виведення результату у поле output
+            document.getElementById('output').value = result;
+        }
+    </script>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="menu.html">Меню</a></li>
+                <li><a href="aboutme.html">Головна</a></li>
+                <li><a href="aboutfirm.html">Про нас</a></li>
+                <li><a href="news.html">Новини</a></li>
+                <li><a href="spesky.html">Оренда та купівля</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<main>
+    <h4>Форма для замовлення книг</h4>
+
+    <form action="#" method="POST" title="Форма для замовлення книг" target="_self" name="orderForm" id="orderForm" dir="ltr">
+        <!-- Поля для введення інформації про замовлення -->
+        <label for="name" title="Введіть ваше ім'я" class="form-label">Ваше ім'я:</label>
+        <input type="text" id="name" name="name" required autocomplete="on" pattern="[A-Za-zА-Яа-яЁёІіЇїЄє\s]+" title="Тільки літери та пробіли">
+
+        <label for="email" title="Введіть вашу електронну адресу" class="form-label">Електронна пошта:</label>
+        <input type="email" id="email" name="email" required autocomplete="on" 
+               pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" 
+               title="Електронна адреса повинна містити символ '@' і домен (наприклад, example@gmail.com)">
+    
+        <label for="phone" title="Введіть номер телефону" class="form-label">Телефон:</label>
+        <input type="tel" id="phone" name="phone" required 
+               pattern="\+?\d{10,13}" 
+               title="Номер телефону повинен містити лише цифри (10-13 цифр). Можливо, зі знаком '+' на початку.">
+        <label for="password" title="Введіть пароль" class="form-label">Пароль:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="month" title="Виберіть місяць" class="form-label">Оберіть місяць:</label>
+        <input type="month" id="month" name="month">
+
+        <label for="color" title="Виберіть колір" class="form-label">Ваш улюблений колір:</label>
+        <input type="color" id="color" name="color">
+
+        <label for="search" title="Пошук по книгам" class="form-label">Пошук:</label>
+        <input type="search" id="search" name="search">
+
+        <label for="keygen" title="Генерація ключа" class="form-label">Ключ:</label>
+        <keygen name="keygen" id="keygen" keytype="rsa" class="form-keygen">
+
+        <label for="favoriteGenre" title="Ваш улюблений жанр" class="form-label">Ваш улюблений жанр:</label>
+        <select id="favoriteGenre" name="favoriteGenre" required>
+            <optgroup label="Художня література" id="fiction" lang="uk">
+                <option value="novel" title="Романи">Романи</option>
+                <option value="scienceFiction" title="Наукова фантастика">Наукова фантастика</option>
+                <option value="poetry" title="Поезія">Поезія</option>
+            </optgroup>
+            <optgroup label="Наукова література" id="nonfiction" lang="uk">
+                <option value="biography" title="Біографії">Біографії</option>
+                <option value="history" title="Історія">Історія</option>
+                <option value="science" title="Наука">Наука</option>
+            </optgroup>
+        </select>
+
+        <label for="comments" title="Ваші коментарі" class="form-label">Ваші коментарі:</label>
+        <textarea id="comments" name="comments" rows="4" maxlength="500" lang="uk" required></textarea>
+
+        <!-- Кнопка для запуску функції runTask -->
+        <button type="button" onclick="runTask()">Run Task</button>
+
+        <!-- Поле для введення тексту та кнопка для пошуку інформації -->
+        <label for="inputText" title="Введіть текст для аналізу" class="form-label">Текст для аналізу:</label>
+        <textarea id="inputText" name="inputText" rows="4"></textarea>
+
+        <button type="button" onclick="searchInfo()">Пошук інформації</button>
+
+        <label for="output" title="Результат" class="form-label">Результат:</label>
+        <textarea id="output" name="output" class="form-output" dir="ltr" rows="6" readonly></textarea>
+
+        <details>
+            <summary id="orderSummary" style="color: blue;">Деталі про замовлення</summary>
+            <p>Тут будуть деталі вашого замовлення, які ви зможете переглянути після заповнення форми.</p>
+        </details>
+    </form>
+</main>
+
+<footer>
+    <pre>
+Контактний телефон: +38 (044) 123-45-67
+Електронна пошта: info@booklibrary.com
+Графік роботи: Пн-Пт 9:00 - 18:00
+    </pre>
+    <address lang="uk" class="company-address">
+        вул. Книжкова, 25, Київ, Україна.
+    </address>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/news.css" title="Основні стилі">
+    <title>Повідомлення - Бібліотека Книг</title>
+   
+    <script>
+        // Функція для зміни тексту і класу в div в залежності від фокусу сторінки
+        function updateFocusStatus(focused) {
+            var statusDiv = document.getElementById('focusStatus');
+            var icon = document.getElementById('statusIcon');
+            
+            if (focused) {
+                statusDiv.innerHTML = '<i id="statusIcon" class="fas fa-check-circle"></i> Фокус на сторінці.';
+                statusDiv.className = 'status success'; // Клас для успішного фокусу
+            } else {
+                statusDiv.innerHTML = '<i id="statusIcon" class="fas fa-exclamation-circle"></i> Фокусу немає на сторінці.';
+                statusDiv.className = 'status error'; // Клас для помилки
+            }
+        }
+
+        // Події onfocus та onblur
+        window.onfocus = function() {
+            updateFocusStatus(true);
+        }
+
+        window.onblur = function() {
+            updateFocusStatus(false);
+        }
+    </script>
+    <!-- Підключення іконок FontAwesome для використання іконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <!-- Дів для повідомлення -->
+    <div id="focusStatus" class="status info">
+        <i id="statusIcon" class="fas fa-info-circle"></i> Фокусу немає на сторінці.
+    </div>
+    <!-- Розділ новин -->
+    <section class="news-section">
+        <h1>Новини фірми "Бібліотека Книг"</h1>
+
+        <!-- Стаття новин -->
+        <article title="Оновлення книжкових колекцій">
+            <h2>Оновлення книжкових колекцій</h2>
+            <p>Ми раді повідомити про надходження нових рідкісних видань до нашої бібліотеки. Тепер у нас доступні нові колекції відомих авторів!</p>
+            <time cite="https://cerebra.org.uk/wp-content/uploads/2022/06/New-Kids-Books-in-the-library-May-22.png" lang="uk">10 вересня 2024</time>
+            <img src="https://i.pinimg.com/originals/50/13/b7/5013b7a6a3eef2f58a3beb3bc871d3d3.jpg" alt="Нова колекція книг" ismap width="300">
+        </article>
+
+        <hr>
+
+        <!-- Друга стаття новин -->
+        <article title="Спеціальні знижки на книги">
+            <h2>Спеціальні знижки на книги</h2>
+            <p>Цього місяця наші клієнти отримують спеціальні знижки на всі видання! 
+                <mark datetime="2024-09-15" id="discount" title="Знижка діє до 15 вересня 2024">Акція діє до 15 вересня 2024</mark>.
+            </p>
+            <time cite="https://booklibrary.com/news/discounts" lang="uk">5 вересня 2024</time>
+            <img src="data:image/jpeg;base64,..." alt="Знижки на книги" ismap width="300">
+        </article>
+
+        <hr>
+
+        <!-- Додаткова новина -->
+        <article title="Новий розділ дитячої літератури">
+            <h2>Відкриття розділу дитячої літератури</h2>
+            <p>Ми раді повідомити про відкриття нового розділу дитячої літератури! Тепер доступні книги для молодших класів.</p>
+            <time cite="https://booklibrary.com/news/kids" lang="uk">1 вересня 2024</time>
+            <img src="https://cerebra.org.uk/wp-content/uploads/2022/06/New-Kids-Books-in-the-library-May-22.png" alt="Дитячі книги" ismap width="300">
+        </article>
+
+        <!-- Карта з областями -->
+        <map name="libraryMap">
+            <area shape="rect" coords="34,44,270,350" href="https://example.com/books" alt="Книги">
+            <area shape="circle" coords="300,150,60" href="https://example.com/discounts" alt="Знижки">
+        </map>
+
+        <!-- Використання тегів sup, sub, bdo, span, wbr -->
+        <p>Нові <bdo lang="en">спеціальні видання</bdo> для молодших класів вже доступні! Ці книги були розроблені спеціально для освітніх цілей.</p>
+        <p><span title="Інформація про автора">Автор: Джон Доу</span></p>
+        <p>Перші книги будуть доставлені<wbr> сьогодні!</p>
+        <img src="https://ae-pic-a1.aliexpress-media.com/kf/S1c18a31ab7a346269869680d75f53ca9h.jpg_640x640Q90.jpg_.webp" usemap="#libraryMap" alt="Дитячі книги для навчання" width="400" height="300">
+    </section>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <pre>
+Контактний телефон: +38 (044) 123-45-67
+Електронна пошта: info@booklibrary.com
+Графік роботи: Пн-Пт 9:00 - 18:00
+        </pre>
+        <address lang="uk" class="company-address">
+            вул. Книжкова, 25, Київ, Україна.
+        </address>
+    </footer>
+
+</body>
+</html>

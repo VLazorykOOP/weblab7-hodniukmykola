@@ -1,0 +1,120 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+
+header {
+    background-color: #2c3e50;
+    padding: 15px 0;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+nav ul li {
+    margin: 0 15px;
+}
+nav ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: bold;
+}
+nav ul li a:hover {
+    color: #f39c12;
+}
+
+
+h4, h5, h6 {
+    text-align: center;
+    color: #2980b9;
+}
+
+h4 {
+    margin-top: 30px;
+}
+
+h5 {
+    margin-top: 20px;
+    font-size: 1.3em;
+}
+
+h6 {
+    margin-top: 20px;
+    font-size: 1.1em;
+}
+
+
+p {
+    max-width: 800px;
+    margin: 10px auto;
+    padding: 0 20px;
+    text-align: justify;
+}
+
+b {
+    color: #27ae60;
+}
+
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: #dcdcdc;
+    margin: 20px 0;
+}
+
+
+.small-heading {
+    text-align: center;
+    color: #8e44ad;
+}
+
+
+footer {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+footer pre, footer address {
+    font-size: 0.9em;
+    color: #bdc3c7;/
+}
+
+
+.company-address {
+    font-style: normal;
+}
+
+
+#author-info, #author-bio {
+    text-align: left;
+    padding: 0 20px;
+    margin-bottom: 10px;
+}
+
+
+button {
+    background-color: #2980b9;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+}
+
+button:hover {
+    background-color: #3498db;
+}

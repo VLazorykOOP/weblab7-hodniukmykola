@@ -1,0 +1,175 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Навігація */
+header {
+    background-color: #2c3e50;
+    padding: 15px 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #f39c12;
+}
+
+
+.news-section {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.news-section h1 {
+    text-align: center;
+    color: #2980b9;
+    margin-bottom: 20px;
+}
+
+
+article {
+    margin-bottom: 40px;
+}
+
+article h2 {
+    color: #27ae60;
+}
+
+article p {
+    text-align: justify;
+}
+
+
+article img {
+    display: block;
+    margin: 10px auto;
+    border-radius: 8px;
+    max-width: 100%;
+    height: auto;
+}
+
+
+time {
+    display: block;
+    text-align: right;
+    color: #7f8c8d;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+
+map {
+    display: block;
+    margin: 20px auto;
+}
+
+
+bdo {
+    font-weight: bold;
+    color: #8e44ad;
+}
+
+span[title] {
+    font-weight: bold;
+    color: #2980b9;
+}
+
+wbr {
+    display: inline;
+}
+
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: #dcdcdc;
+    margin: 30px 0;
+}
+
+
+footer {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+footer pre, footer address {
+    font-size: 0.9em;
+    color: #bdc3c7;
+}
+
+address {
+    font-style: normal;
+} 
+.status {
+    padding: 15px 20px;
+    margin: 20px;
+    border-radius: 8px;
+    font-size: 18px;
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+/* Стиль для успіху */
+.status.success {
+    background-color: #28a745; /* Зелений для успішного повідомлення */
+}
+
+/* Стиль для помилки */
+.status.error {
+    background-color: #dc3545; /* Червоний для помилок */
+}
+
+/* Стиль для інформаційного повідомлення */
+.status.info {
+    background-color: #17a2b8; /* Блакитний для інформацій */
+}
+
+/* Стиль для іконок повідомлень */
+.status i {
+    margin-right: 10px;
+    font-size: 24px;
+}
+
+/* Адаптивне забарвлення тексту */
+.status.success i {
+    color: #c3e6cb;
+}
+
+.status.error i {
+    color: #f5c6cb;
+}
+
+.status.info i {
+    color: #bee5eb;
+}
